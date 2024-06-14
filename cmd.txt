@@ -1,0 +1,16 @@
+docker compose up -d
+
+go to broker in docker
+then run this command in exec:
+kafka-topics --list --bootstrap-server broker:29092
+
+pip install faker
+pip install simplejson
+
+docker exec -it broker /bin/bash
+kafka-console-consumer --topic financial_transactions --bootstrap-server broker:29092 --from-beginning
+
+after flink is done
+/Users/darshanuttammistry/Developer/Flink/flink-1.18.1/bin/flink run -c flinkcommerce.DataStreamJob target/flinkcommerce-1.jar 
+
+postgres steps:
